@@ -9,13 +9,13 @@ import com.crmarsh.filaments.views.WeatherView;
 import android.content.Context;
 import android.widget.Toast;
 
-public class WeatherViewPresenter extends ComponentPresenter<WeatherView.INTERACTION_TYPES, WeatherData> {
+public class WeatherViewPresenter extends ComponentPresenter<WeatherView.Interactions, WeatherData> {
     public WeatherViewPresenter(Context context) {
         super(context);
     }
 
     @Override
-    public void onInteract(WeatherView.INTERACTION_TYPES interactionType, WeatherData weatherData) {
+    public void onInteract(WeatherView.Interactions interactionType, WeatherData weatherData) {
         switch (interactionType) {
             case ON_CLICK:
                 final CharSequence text = "The temperature is " +

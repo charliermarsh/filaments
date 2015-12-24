@@ -10,7 +10,6 @@ import com.crmarsh.filaments.ComponentPresenter;
 import com.crmarsh.filaments.MainActivity;
 import com.crmarsh.filaments.R;
 import com.crmarsh.filaments.models.WeatherData;
-import com.crmarsh.filaments.presenters.WeatherViewPresenter;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -27,10 +26,10 @@ public class WeatherView extends Component<WeatherData> {
     TextView mTemperatureView;
 
     @Inject
-    ComponentPresenter<INTERACTION_TYPES, WeatherData> mWeatherViewPresenter;
+    ComponentPresenter<Interactions, WeatherData> mWeatherViewPresenter;
 
-    public enum INTERACTION_TYPES {
-        ON_CLICK
+    public enum Interactions {
+        ON_CLICK,
     }
 
     public WeatherView(Context context, AttributeSet attrs) {
@@ -50,7 +49,7 @@ public class WeatherView extends Component<WeatherData> {
         mTemperatureView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mWeatherViewPresenter.onInteract(INTERACTION_TYPES.ON_CLICK, weatherData);
+                mWeatherViewPresenter.onInteract(Interactions.ON_CLICK, weatherData);
             }
         });
     }

@@ -27,7 +27,7 @@ public class PresenterModule {
 
     @Provides
     @Singleton
-    ComponentPresenter<WeatherView.INTERACTION_TYPES, WeatherData> provideWeatherPresenter(final Context context) {
+    ComponentPresenter<WeatherView.Interactions, WeatherData> provideWeatherPresenter(final Context context) {
         return new WeatherViewPresenter(context);
     }
 }

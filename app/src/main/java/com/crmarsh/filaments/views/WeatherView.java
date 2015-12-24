@@ -6,6 +6,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.crmarsh.filaments.Component;
+import com.crmarsh.filaments.ComponentPresenter;
 import com.crmarsh.filaments.MainActivity;
 import com.crmarsh.filaments.R;
 import com.crmarsh.filaments.models.WeatherData;
@@ -26,7 +27,7 @@ public class WeatherView extends Component<WeatherData> {
     TextView mTemperatureView;
 
     @Inject
-    WeatherViewPresenter mWeatherViewPresenter;
+    ComponentPresenter<INTERACTION_TYPES, WeatherData> mWeatherViewPresenter;
 
     public enum INTERACTION_TYPES {
         ON_CLICK

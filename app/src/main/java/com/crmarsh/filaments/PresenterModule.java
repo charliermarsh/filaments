@@ -2,7 +2,9 @@ package com.crmarsh.filaments;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.crmarsh.filaments.models.WeatherData;
 import com.crmarsh.filaments.presenters.WeatherViewPresenter;
+import com.crmarsh.filaments.views.WeatherView;
 import dagger.Module;
 import dagger.Provides;
 
@@ -25,7 +27,7 @@ public class PresenterModule {
 
     @Provides
     @Singleton
-    WeatherViewPresenter provideWeatherPresenter(final Context context) {
+    ComponentPresenter<WeatherView.INTERACTION_TYPES, WeatherData> provideWeatherPresenter(final Context context) {
         return new WeatherViewPresenter(context);
     }
 }
